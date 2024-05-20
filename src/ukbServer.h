@@ -7,7 +7,7 @@
 
 #include <string>
 #include <boost/asio.hpp>
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 #include <boost/lexical_cast.hpp>
 
 // Class to handle client/server operation in ukb
