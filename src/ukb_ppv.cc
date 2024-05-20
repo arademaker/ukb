@@ -17,6 +17,7 @@
 
 // timer
 
+#define BOOST_TIMER_ENABLE_DEPRECATED 1
 #include <boost/timer.hpp>
 
 // bfs

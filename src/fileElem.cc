@@ -9,6 +9,10 @@
 #define BOOST_FILESYSTEM_VERSION 2
 #endif
 
+#include <boost/filesystem/directory.hpp>
+#include <boost/filesystem/file_status.hpp>
+#include <boost/filesystem/exception.hpp>
+
 #include <boost/filesystem/operations.hpp>
 #include <boost/filesystem/path.hpp>
 
@@ -155,9 +159,12 @@ namespace ukb {
 	void File_elem::fill(const string & str) {
 
 		boost::filesystem::path p(str);
-		p.normalize();
+		// p.normalize();
+		p = p.lexically_normal();
 
-		path = p.branch_path().string();
+		// path = p.branch_path().string();
+		path = p.parent_path().string();
+		
 		if (path == "") path = ".";
 
 #if (BOOST_VERSION / 100 % 1000 < 48)
